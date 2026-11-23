@@ -4,17 +4,18 @@
 
 ## Automated checks
 
+- Expo compatibility: `npx expo-doctor@latest` passed all 20/20 checks, and `npx expo install --check` reported that dependencies are up to date after a clean `pnpm install --frozen-lockfile`.
 - TypeScript: `pnpm check` passed with no type errors.
 - Lint: `pnpm lint` passed with no ESLint diagnostics.
 - Unit tests: `pnpm test -- --run` completed with 25 passing tests and 1 skipped starter auth test. The summary was 1 passing test file and 1 skipped test file.
-- Expo configuration: `npx expo config --json` passed and resolved the ContextRoute AI branding, portrait orientation, adaptive icon paths, notification permission declaration, and generated Android package `space.manus.contextroute.t063444857872574`.
+- Expo configuration: `npx expo config --json` passed with SDK `58.0.0` and resolved the ContextRoute AI branding, portrait orientation, adaptive icon paths, notification permission declaration, and generated Android package `space.manus.contextroute.t063444857872574`.
 - Route manifest: `GET /manus-routes.json` returned HTTP 200 and 27 routes. The paths match `SCREEN_INVENTORY.md`.
 
 ## Runtime checks
 
 - WebDev TypeScript diagnostics are registered and active.
-- The managed Metro command is listening on port 8081.
-- The managed API starter command is listening on port 3000. The new frontend does not call it for travel data, authentication, reports, sync, or notifications.
+- The managed Metro command is listening on port 8081 after an SDK 58-only restart; its Home route returned HTTP 200 and bundled successfully.
+- The managed API starter command is listening on port 3000 and `GET /api/health` returned HTTP 200. The new frontend does not call it for travel data, authentication, reports, sync, or notifications.
 
 ## Manual and visual verification
 

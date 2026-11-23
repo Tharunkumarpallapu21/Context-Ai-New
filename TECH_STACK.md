@@ -1,6 +1,7 @@
 # ContextRoute AI — Technology Stack
 
-- React Native + TypeScript + Expo SDK 57.
+- React Native 0.88.1 + TypeScript + Expo SDK 58 (`expo` 58.0.26).
+- React 19.3.0, React DOM 19.3.0, and React Native Web 0.21.4.
 - Expo Router for file-based navigation.
 - Zustand for local UI state and AsyncStorage-backed persistence.
 - React Hook Form + Zod for local form validation.

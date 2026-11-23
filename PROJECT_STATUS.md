@@ -8,13 +8,18 @@ ContextRoute AI is a frontend-only Expo Android application with all 27 approved
 
 The Home / Map route is map-first and clearly labels the map canvas as an integration placeholder. Search, places, routing, GPS, navigation, authentication, notifications, emergency dispatch, moderation, and cloud sync remain explicit integration boundaries. No live travel facts or backend outcomes are fabricated.
 
+The project now targets Expo SDK 58 with React Native 0.88.1 and React 19.3.0 so it matches the user’s Android Expo Go installation. The upgrade changed only the Expo/RN dependency set, dynamic SDK config plugins, and one SDK 58 TypeScript compatibility cast for tab icon colors; existing screens, navigation, assets, and feature boundaries were preserved.
+
 ## Verification evidence
 
 - `pnpm check` — passed with no TypeScript errors.
 - `pnpm lint` — passed with no ESLint diagnostics.
 - `pnpm test -- --run` — 25 tests passed, 1 starter auth test skipped, 1 test file passed and 1 skipped.
-- `npx expo config --json` — passed; app name is `ContextRoute AI`, version `1.0.0`, portrait orientation, and Android package `space.manus.contextroute.t063444857872574`.
+- `npx expo-doctor@latest` — 20/20 checks passed with no issues.
+- `npx expo install --check` — dependencies are up to date after a clean lockfile reinstall.
+- `npx expo config --json` — passed with SDK `58.0.0`; app name is `ContextRoute AI`, version `1.0.0`, portrait orientation, and Android package `space.manus.contextroute.t063444857872574`.
 - `GET /manus-routes.json` — HTTP 200 with 27 declared routes matching the approved inventory.
+- `GET /api/health` — HTTP 200; API remained running while only Metro was restarted.
 - WebDev diagnostics — TypeScript registered and active.
 - Runtime — declared Metro listener on port 8081 and API starter listener on port 3000 are both listening.
 - Visual QA — all 27 declared routes were captured at 390×844 mobile width; onboarding, authentication, planning, routes, navigation, discovery, reporting, emergency, profile, settings, and Home / Map rendered without blocking visual defects.

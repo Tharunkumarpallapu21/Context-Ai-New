@@ -106,7 +106,12 @@ const config: ExpoConfig = {
   },
   plugins: [
     "expo-asset",
+    "expo-font",
+    "expo-image",
     "expo-router",
+    "expo-secure-store",
+    "expo-status-bar",
+    "expo-web-browser",
     [
       "expo-audio",
       {
