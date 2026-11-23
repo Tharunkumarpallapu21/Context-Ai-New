@@ -1,12 +1,7 @@
-/**
- * Thin re-exports so consumers don't need to know about internal theme plumbing.
- * Full implementation lives in lib/_core/theme.ts.
- */
-export {
-  Colors,
-  Fonts,
-  SchemeColors,
-  ThemeColors,
-  type ColorScheme,
-  type ThemeColorPalette,
-} from "@/lib/_core/theme";
+import { APP_COLORS, type AppColorScheme, type AppColors } from "@/lib/design-system";
+
+export type ColorScheme = AppColorScheme;
+export type ThemeColorPalette = AppColors;
+export const SchemeColors = APP_COLORS;
+export const Colors = APP_COLORS;
+export const Fonts = { regular: "System", medium: "System", semiBold: "System", bold: "System" };
